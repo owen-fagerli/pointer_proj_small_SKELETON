@@ -57,7 +57,16 @@ namespace KP{
 		if (src == nullptr|| new_src == nullptr || tag ==nullptr || tag_replacement == nullptr){
 			return -2;
 		}
+		int srcLen = strlen(src);
+		int tagLen = strlen(tag);
 
+		for (int i = 0; i < srcLen; i++) {
+			if (*(src + i) == tag[0]) {
+				if (strncmp((src + i), tag, tagLen) == 0){
+						strcpy(new_src,tag);
+				}
+			}
+		}
 		return 0;
 	}
 
@@ -70,7 +79,7 @@ namespace KP{
 	 *         otherwise the number of times tag occurs in src
 	 */
 	int findNumbOccurrences(const char *src,  const char *tag){
-		if (src == nullptr|| tag ==nullptr){
+		if (src == nullptr|| tag == nullptr){
 					return -2;
 				}
 
@@ -80,14 +89,13 @@ namespace KP{
 
 
 		for (int i = 0; i < srcLen; i++) {
-				//zoom along till we find the first char
+
 
 				if (*(src + i) == tag[0]) {
 					if (strncmp((src + i), tag, tagLen) == 0){
 						count++;
 					}
 				}
-
 	}
 		return count;
 	}
