@@ -27,10 +27,7 @@ int main(int argc, char *argv[]) {
 		cout << HELP_STRING2;
 		return FAIL_WRONG_NUMBER_ARGS;
 	}
-	string infile = argv[0];
-	string outfile = argv[1];
-	string tag = argv[2];
-	string replaceTag = argv[3];
+
 
 
 }

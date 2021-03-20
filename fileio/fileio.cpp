@@ -25,7 +25,7 @@ int readFile(std::string &filename,std::string &contents){
 
 	while (!inputFile.eof()){
 		getline(inputFile, nextLine);
-		cout << nextLine;
+		contents.append(nextLine);
 	}
 
 	inputFile.close();
